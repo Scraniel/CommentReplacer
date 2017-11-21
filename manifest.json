@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Comment Replacer Plugin",
+  "description": "This extension let you replace or select from a bunch of premade comments",
+  "version": "1.0",
+
+  "browser_action": 
+  {
+   "default_icon": "icon.png",
+   "default_popup": "popup.html"
+  },
+  
+  "content_scripts":
+  [
+	{
+		"matches" : ["<all_urls>"],
+		"js": ["textReplacer.js"],
+		"run_at" : "document_start"
+	}
+  ],
+  
+  "permissions": 
+  [
+   "activeTab"
+  ]
+}
